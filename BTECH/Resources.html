@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Resources</title>
+    <style>
+        :root {
+            --primary-green: #2e7d32;
+            --secondary-green: #81c784;
+            --accent-blue: #0288d1;
+            --light-bg: #f5f5f5;
+            --dark-text: #212121;
+            --light-text: #f5f5f5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-bg);
+            color: var(--dark-text);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                   url(images/295CD9E300000578-0-image-a-26_1433454198219.jpg);
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 4rem 1rem;
+        }
+        
+        /* .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: var(--light-text);
+        } */
+        
+        .tagline {
+            font-size: 2,2rem;
+            margin-bottom: 2rem;
+            color: var(--light-text);
+        }
+        
+        nav {
+            background-color: var(--primary-green);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        nav li {
+            margin: 0 1rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        nav a:hover {
+            background-color: var(--secondary-green);
+            color: var(--dark-text);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        section {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        h1, h2, h3 {
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+        }
+        
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 1.5rem;
+        }
+        
+        .faq-question {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: var(--accent-blue);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-answer {
+            margin-top: 0.5rem;
+            display: none;
+        }
+        
+        .faq-answer.show {
+            display: block;
+        }
+        
+        .infographics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .infographic-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .infographic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .infographic-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .infographic-caption {
+            padding: 1rem;
+            background-color: white;
+        }
+        .issue-title {
+            color: var(--primary-green);
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            font-size: 1.8rem;
+        }
+        
+        .issue-icon {
+            margin-right: 1rem;
+            font-size: 2rem;
+            color: var(--primary-green);
+        }
+        .download-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            text-align: center;
+        }
+        
+        .download-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .download-icon {
+            font-size: 3rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            background-color: var(--primary-green);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            margin-top: 1rem;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-3px);
+            background-color: var(--secondary-green);
+            color: var(--dark-text);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        footer {
+    background-color: white;
+    color: #fff;
+    padding: 50px 20px;
+}
+
+footer .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+footer h3 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+footer p, footer li {
+    color:gray
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer li {
+    margin-bottom: 8px;
+}
+
+footer a {
+    color: black;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid #555;
+    margin-top: 30px;
+}
+
+.footer-bottom p {
+    color: #aaa;
+}
+
+.footer-brand {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.footer-icon {
+    margin-right: 8px;
+    color:green;
+}
+
+       
+        
+        @media (max-width: 768px) {
+            .tagline {
+                font-size: 1.5rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav li {
+                margin: 0.5rem 0;
+            }
+
+            .infographics-grid,
+            .materials-grid,
+            .resource-items-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 1rem;
+            }
+
+            .infographic-img {
+                height: auto;
+            }
+
+            .issue-title {
+                font-size: 1.5rem;
+            }
+
+            .download-btn {
+                width: 100%;
+                padding: 0.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="tagline">Understanding and Addressing Climate Change in Our Nation</div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="home">Home</a></li>
+            <li><a href="#faqs">FAQs</a></li>
+            <li><a href="#infographics">Infographics</a></li>
+            <li><a href="#materials">Educational Materials</a></li>
+            <li><a href="#resources">Resources</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <section id="home">
+            <h1>Climate Change in Ghana</h1>
+            <p>Ghana faces significant challenges from climate change, including rising temperatures, erratic rainfall, coastal erosion, and threats to agriculture. This website provides essential information, resources, and tools to help Ghanaians understand and respond to these challenges.</p>
+            
+            <h3>Key Climate Impacts in Ghana:</h3>
+            <ul>
+                <li>Temperature increase of 1-3°C projected by 2050</li>
+                <li>Sea level rise threatening coastal communities</li>
+                <li>Declining cocoa yields in major growing regions</li>
+                <li>Increased frequency of extreme weather events</li>
+                <li>Pressure on water resources and hydroelectric power</li>
+            </ul>
+        </section>
+        
+        <section id="faqs">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    How is Ghana affected by climate change?
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    Ghana experiences rising temperatures, erratic rainfall patterns, coastal erosion (especially in places like Keta), reduced agricultural productivity, and increased frequency of extreme weather events. The northern regions face desertification while coastal areas deal with flooding and erosion.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    What are the main causes of climate change in Ghana?
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    While global emissions drive climate change, Ghana contributes through deforestation (especially in the Ashanti and Eastern regions), illegal mining ("galamsey"), fossil fuel use, and agricultural practices. Energy production, land use changes, and transportation are major emission sectors.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    What is Ghana doing to combat climate change?
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    Ghana has implemented the National Climate Change Policy, participates in international agreements, promotes renewable energy (like the Bui Dam solar project), and has initiatives like the Ghana REDD+ Strategy to reduce deforestation. The country has also developed a National Adaptation Plan.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    How does climate change affect food security in Ghana?
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    Erratic rainfall affects crop yields, especially for staple crops like maize and yam. Rising temperatures also impact cocoa production, a key export crop. Fish stocks are declining due to warming ocean temperatures, affecting coastal communities' livelihoods and protein sources.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    What can ordinary Ghanaians do to help?
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    Planting trees, practicing sustainable farming, reducing waste, conserving energy, and supporting climate-friendly policies can all make a difference. Individuals can also educate others, participate in community adaptation projects, and choose sustainable transportation options when possible.
+                </div>
+            </div>
+        </section>
+        
+        <section id="infographics">
+            <h2>Climate Infographics</h2>
+            <p>Visual representations of climate data and impacts in Ghana</p>
+            
+            <div class="infographics-grid">
+                <div class="infographic-card">
+                    <img src="images/climate-change-effects-infographics-powerpoint-google-slides-keynote-presentation-template-1.jpg" alt="Temperature Trends in Ghana" class="infographic-img">
+                    <div class="infographic-caption">
+                        <h3>Temperature Trends</h3>
+                        <p>Historical and projected temperature changes across Ghana's regions</p>
+                    </div>
+                </div>
+                
+                <div class="infographic-card">
+                    <img src="images/img16.jpg" alt="Rainfall Patterns" class="infographic-img">
+                    <div class="infographic-caption">
+                        <h3>Rainfall Patterns</h3>
+                        <p>Changes in rainfall distribution and intensity over time</p>
+                    </div>
+                </div>
+                
+                <div class="infographic-card">
+                    <img src="images/EnxSWvlW4AQJMZ0.jpg" alt="Coastal Erosion" class="infographic-img">
+                    <div class="infographic-caption">
+                        <h3>Coastal Erosion</h3>
+                        <p>Impact of sea level rise on Ghana's coastline communities</p>
+                    </div>
+                </div>
+                
+                <div class="infographic-card">
+                    <img src="images/un_info_agri_1_4mar25_en-07.jpg" alt="Agriculture Impact" class="infographic-img">
+                    <div class="infographic-caption">
+                        <h3>Agriculture Impact</h3>
+                        <p>Projected changes in crop yields due to climate change</p>
+                    </div>
+                </div>
+                
+                <div class="infographic-card">
+                    <img src="images/footprint-labeled-crop-e1531852178631.jpg" alt="Carbon Footprint" class="infographic-img">
+                    <div class="infographic-caption">
+                        <h3>Carbon Footprint</h3>
+                        <p>Ghana's greenhouse gas emissions by sector</p>
+                    </div>
+                </div>
+                
+                <div class="infographic-card">
+                    <img src="images/Net-Zero-for-businesses-2-1024x682.jpg" alt="Renewable Energy" class="infographic-img">
+                    <div class="infographic-caption">
+                        <h3>Renewable Energy</h3>
+                        <p>Ghana's potential for solar, wind, and other clean energy</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="resources">
+            <h2 class="section-title animate__animated animate__fadeIn">Learning Resources</h2>
+            
+            <div class="issue-card animate__animated">
+                <h3 class="issue-title">
+
+                    📚 Educational Materials
+                </h3>
+                
+                <p>Access our collection of downloadable resources to deepen your understanding of environmental issues:</p>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                    <div class="resource-item" style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); transition: all 0.3s;">
+                        <h4 style="color: var(--primary); margin-top: 0;"><i class="fas fa-file-pdf" style="margin-right: 0.5rem;"></i> 🌳Global Climate Science</h4>
+                        <p>Comprehensive overview of climate change causes and effects worldwide</p>
+                        <a href="https://www.ipcc.ch/site/assets/uploads/sites/4/2020/02/SRCCL-Complete-BOOK-LRES.pdf" class="download-btn" style="display: inline-block; font-size: 0.9rem; padding: 0.5rem 1rem;" download>
+                            Download (2.4MB)
+                        </a>
+                    </div>
+                    
+                    <div class="resource-item" style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); transition: all 0.3s;">
+                        <h4 style="color: var(--primary); margin-top: 0;"><i class="fas fa-file-pdf" style="margin-right: 0.5rem;"></i> 🌱Ghana's Environmental Policy</h4>
+                        <p>Analysis of Ghana's environmental regulations and implementation</p>
+                        <a href="https://mesti.gov.gh/wp-content/uploads/2017/04/National-Environment-Policy_FINAL.pdf" class="download-btn" style="display: inline-block; font-size: 0.9rem; padding: 0.5rem 1rem;" download>
+                            Download (1.8MB)
+                        </a>
+                    </div>
+                    
+                    <div class="resource-item" style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); transition: all 0.3s;">
+                        <h4 style="color: var(--primary); margin-top: 0;"><i class="fas fa-file-pdf" style="margin-right: 0.5rem;"></i>🏫 Youth Action Guide</h4>
+                        <p>Practical steps for young people to make a difference</p>
+                        <a href="https://igsss.org/wp-content/uploads/2022/06/Climate-Change-A-Youths-Guide-to-Action.pdf" class="download-btn" style="display: inline-block; font-size: 0.9rem; padding: 0.5rem 1rem;" download>
+                            Download (3.1MB)
+                        </a>
+                    </div>
+                </div>
+            </div>
+            </section>
+        
+        
+        <section id="resources">
+            <h2>Additional Resources</h2>
+            <h3>Government Agencies</h3>
+            <ul>
+                <li>Environmental Protection Agency (EPA) Ghana - Climate Change Unit</li>
+                <li>Ministry of Environment, Science, Technology and Innovation</li>
+                <li>Ghana Meteorological Agency</li>
+            </ul>
+            
+            <h3>International Organizations</h3>
+            <ul>
+                <li>UNDP Ghana Climate Change Projects</li>
+                <li>World Bank Ghana Climate Portfolio</li>
+                <li>UNFCCC Ghana Country Profile</li>
+            </ul>
+            
+            <h3>Local NGOs</h3>
+            <ul>
+                <li>Green Africa Youth Organization</li>
+                <li>A Rocha Ghana</li>
+                <li>Friends of the Earth Ghana</li>
+            </ul>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <div>
+                <h3 class="footer-brand"><i class="fas fa-leaf footer-icon"></i>DI BTEC PROJECT</h3>
+                <p>Empowering Ghanaians to understand and take action against climate change for a sustainable future.</p>
+            </div>
+            <div>
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="" onclick="showPage('home')">Home</a></li>
+                    <li><a href="Readmore.html" onclick="showPage('causes')">Causes</a></li>
+                    <li><a href="Readmore.html" onclick="showPage('effects')">Effects</a></li>
+                    <li><a href="Readmore.html" onclick="showPage('solutions')">Solutions</a></li>
+                    <li><a href="Readmore.html" onclick="showPage('contact')">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+              <!-- <h3 class="text-lg font-bold mb-4">Resources Form Other Website</h3> -->
+              <h3>Resources Form Other Website</h3>
+                <ul>
+                    <li><a href="https://climateinformation.org/#:~:text=The%20Climate%20Information%20Portal%20(CIP,for%20a%20variety%20of%20purposes.">Climate Reports</a></li>
+                    <li><a href="https://www.wwf.org.uk/learn/climate-change">Educational Materials</a></li>
+                    <li><a href="https://www.globalpartnership.org/blog/scaling-youth-toolkit-climate-leadership-ghana-and-kenya" class="text-gray-400 hover:text-green-400 transition duration-300">Action Toolkit</a></li>
+                    <li><a href="https://nrs.fcghana.org/event-calendar/">Events Calendar</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Contact Info</h3>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt footer-icon"></i>123 Sustainability St, Accra</li>
+                    <li><i class="fas fa-phone-alt footer-icon"></i>+233 24 123 4567</li>
+                    <li><i class="fas fa-envelope footer-icon"></i>info@climateactiongh.org</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 GreenGhana Alliance. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Toggle FAQ answers
+        function toggleAnswer(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('span');
+            
+            answer.classList.toggle('show');
+            
+            if (answer.classList.contains('show')) {
+                icon.textContent = '-';
+            } else {
+                icon.textContent = '+';
+            }
+        }
+        
+        // Simulate download functionality
+        const downloadButtons = document.querySelectorAll('.download-btn');
+        downloadButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const materialTitle = button.parentElement.querySelector('h3').textContent;
+                alert(`Thank you for downloading "${materialTitle}". Your download will start shortly.`);
+                // In a real implementation, this would link to actual PDF files
+            });
+        });
+        
+        // Smooth scrolling for navigation
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 70,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

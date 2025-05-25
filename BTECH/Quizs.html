@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>climate change</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet"href="quizs.css">
+    
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-leaf"></i>
+                <span>GreenGhana Alliance</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#videos">Watch Videos</a></li>
+                    <li><a href="#quiz">Quiz</a></li>
+                 
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Together for a Greener Ghana</h1>
+            <p>Climate change is affecting our beautiful country. Learn how we can work together to protect Ghana's environment for future generations.</p>
+            <div class="hero-buttons">
+                <a href="#quiz" class="btn btn-outline">Take a Quiz</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Climate Change Matters</h2>
+                <p>Understanding the challenges and opportunities for Ghana</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <h3>Deforestation</h3>
+                    <p>Ghana has lost over 60% of its forest cover since 1950, threatening biodiversity and climate stability.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <h3>Water Resources</h3>
+                    <p>Changing rainfall patterns are affecting water availability for agriculture and domestic use.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bread-slice"></i>
+                    </div>
+                    <h3>Food Security</h3>
+                    <p>Erratic weather is reducing crop yields, putting pressure on Ghana's food supply.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>60%</h3>
+                    <p>Forest cover lost since 1950</p>
+                </div>
+                <div class="stat-item">
+                    <h3>1.5°C</h3>
+                    <p>Temperature increase since 1960</p>
+                </div>
+                <div class="stat-item">
+                    <h3>30%</h3>
+                    <p>Decline in cocoa yields projected by 2050</p>
+                </div>
+                <div class="stat-item">
+                    <h3>5M</h3>
+                    <p>People at risk from coastal flooding</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz Section -->
+    <section class="quiz-section" id="quiz">
+        <div class="container">
+            <div class="section-title">
+                <h2>Test Your Knowledge</h2>
+                <p>Take our quiz to see how much you know about climate change in Ghana</p>
+            </div>
+            <div class="quiz-container">
+                <div class="quiz-header">
+                    <h2>Climate Change Quiz</h2>
+                    <p>Answer these questions to test your understanding of climate issues in Ghana</p>
+                    <div class="quiz-progress">
+                        <div class="progress-bar" id="progress-bar"></div>
+                    </div>
+                </div>
+                <div class="quiz-body" id="quiz-body">
+                    <div class="question" id="question">Question will appear here</div>
+                    <div class="options" id="options">
+                        <!-- Options will be inserted here by JavaScript -->
+                    </div>
+                </div>
+                <div class="quiz-footer">
+                    <div class="question-count" id="question-count">Question 1 of 5</div>
+                    <button class="btn" id="next-btn">Next Question</button>
+                </div>
+                <div class="quiz-result" id="quiz-result" style="display: none;">
+                    <h3>Quiz Completed!</h3>
+                    <div class="score" id="score">0/5</div>
+                    <div class="badge" id="badge">Beginner</div>
+                    <p id="result-message">You're just starting your climate change journey. Keep learning!</p>
+                    <button class="btn" id="retry-btn">Try Again</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-video">
+        <h2 id="videos">Watch Some  videos </h2>
+        <div class="content-container">
+            <ul>
+                <li><strong>Deforestation:</strong> Ghana loses thousands of hectares of forest each year due to logging, mining, agriculture, and charcoal production.</li>
+                <li><strong>Burning of Fossil Fuels:</strong> Emissions from transportation, energy production, and industry release carbon dioxide into the atmosphere.</li>
+                <li><strong>Unsustainable Agriculture:</strong> Slash-and-burn practices and overgrazing contribute to soil degradation and carbon emissions.</li>
+                <li><strong>Urbanization:</strong> Rapid development in cities leads to increased pollution and strain on natural resources.</li>
+            </ul>
+            <div class="video-container">
+                <h3>Videos</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/d2oKDV4Tz5w?si=ARapfl71kBwp2sg2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/ifrHogDujXw" title="How Climate Change Starts: Explained Simply" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div>
+                <h3 class="footer-brand"><i class="fas fa-leaf footer-icon"></i>DI BTEC PROJECT</h3>
+                <p>Empowering Ghanaians to understand and take action against climate change for a sustainable future.</p>
+            </div>
+            <div>
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html" onclick="showPage('home')">Home</a></li>
+                    <li><a href="quiz" onclick="showPage('quiz')">Quizs</a></li>
+                    <li><a href="" onclick="showPage('videos')">Watch Videos</a></li>
+                   
+                </ul>
+            </div>
+            <div>
+                <h3>Resources Form Other Website</h3>
+                <ul>
+                    <li><a href="https://climateinformation.org/#:~:text=The%20Climate%20Information%20Portal%20(CIP,for%20a%20variety%20of%20purposes.">Climate Reports</a></li>
+                    <li><a href="https://www.wwf.org.uk/learn/climate-change">Educational Materials</a></li>
+                    <li><a href="https://www.globalpartnership.org/blog/scaling-youth-toolkit-climate-leadership-ghana-and-kenya" class="text-gray-400 hover:text-green-400 transition duration-300">Action Toolkit</a></li>
+                    <li><a href="https://nrs.fcghana.org/event-calendar/">Events Calendar</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Contact Info</h3>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt footer-icon"></i>123 Sustainability St, Accra</li>
+                    <li><i class="fas fa-phone-alt footer-icon"></i>+233 24 123 4567</li>
+                    <li><i class="fas fa-envelope footer-icon"></i>info@climateactiongh.org</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 GreenGhana Alliance. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Quiz Data
+        const quizData = [
+            {
+                question: "What is the main cause of deforestation in Ghana?",
+                options: [
+                    "Urban expansion",
+                    "Illegal logging and charcoal production",
+                    "Natural forest fires",
+                    "Climate change effects"
+                ],
+                answer: 1
+            },
+            {
+                question: "Which region of Ghana is most affected by desertification?",
+                options: [
+                    "Ashanti Region",
+                    "Greater Accra Region",
+                    "Northern Region",
+                    "Western Region"
+                ],
+                answer: 2
+            },
+            {
+                question: "How has climate change affected Ghana's rainfall patterns?",
+                options: [
+                    "More consistent rainfall throughout the year",
+                    "Longer dry seasons and more intense rainy seasons",
+                    "No noticeable change",
+                    "Complete disappearance of rainy seasons"
+                ],
+                answer: 1
+            },
+            {
+                question: "Which of these is NOT a recommended climate change solution for Ghana?",
+                options: [
+                    "Reforestation programs",
+                    "Transition to renewable energy",
+                    "Expansion of fossil fuel power plants",
+                    "Sustainable agricultural practices"
+                ],
+                answer: 2
+            },
+            {
+                question: "What percentage of Ghana's forest cover has been lost since 1950?",
+                options: [
+                    "20%",
+                    "40%",
+                    "60%",
+                    "80%"
+                ],
+                answer: 2
+            }
+        ];
+
+        // Quiz Variables
+        let currentQuestion = 0;
+        let score = 0;
+        let selectedOption = null;
+        let quizCompleted = false;
+
+        // DOM Elements
+        const quizBody = document.getElementById('quiz-body');
+        const questionElement = document.getElementById('question');
+        const optionsElement = document.getElementById('options');
+        const questionCountElement = document.getElementById('question-count');
+        const nextButton = document.getElementById('next-btn');
+        const quizResult = document.getElementById('quiz-result');
+        const scoreElement = document.getElementById('score');
+        const badgeElement = document.getElementById('badge');
+        const resultMessageElement = document.getElementById('result-message');
+        const retryButton = document.getElementById('retry-btn');
+        const progressBar = document.getElementById('progress-bar');
+
+        // Initialize Quiz
+        function loadQuestion() {
+            const question = quizData[currentQuestion];
+            questionElement.textContent = question.question;
+            
+            // Clear previous options
+            optionsElement.innerHTML = '';
+            
+            // Add new options
+            question.options.forEach((option, index) => {
+                const optionElement = document.createElement('div');
+                optionElement.classList.add('option');
+                optionElement.textContent = option;
+                optionElement.dataset.index = index;
+                optionElement.addEventListener('click', selectOption);
+                optionsElement.appendChild(optionElement);
+            });
+            
+            // Update question count
+            questionCountElement.textContent = `Question ${currentQuestion + 1} of ${quizData.length}`;
+            
+            // Update progress bar
+            progressBar.style.width = `${((currentQuestion) / quizData.length) * 100}%`;
+            
+            // Reset selected option
+            selectedOption = null;
+            
+            // Hide next button until an option is selected
+            nextButton.style.display = 'none';
+        }
+
+        // Select Option
+        function selectOption(e) {
+            // Remove selected class from all options
+            document.querySelectorAll('.option').forEach(option => {
+                option.classList.remove('selected');
+            });
+            
+            // Add selected class to clicked option
+            e.target.classList.add('selected');
+            selectedOption = parseInt(e.target.dataset.index);
+            
+            // Show next button
+            nextButton.style.display = 'inline-block';
+        }
+
+        // Check Answer and Move to Next Question
+        function nextQuestion() {
+            if (selectedOption === null) return;
+            
+            // Check if answer is correct
+            const correctAnswer = quizData[currentQuestion].answer;
+            const options = document.querySelectorAll('.option');
+            
+            // Disable all options
+            options.forEach(option => {
+                option.style.pointerEvents = 'none';
+            });
+            
+            // Highlight correct and wrong answers
+            options.forEach((option, index) => {
+                if (index === correctAnswer) {
+                    option.classList.add('correct');
+                } else if (index === selectedOption && index !== correctAnswer) {
+                    option.classList.add('wrong');
+                }
+            });
+            
+            // Update score if correct
+            if (selectedOption === correctAnswer) {
+                score++;
+            }
+            
+            // Move to next question or show results
+            setTimeout(() => {
+                currentQuestion++;
+                
+                if (currentQuestion < quizData.length) {
+                    loadQuestion();
+                } else {
+                    showResults();
+                }
+            }, 1000);
+        }
+
+        // Show Quiz Results
+        function showResults() {
+            quizBody.style.display = 'none';
+            quizResult.style.display = 'block';
+            document.querySelector('.quiz-footer').style.display = 'none';
+            
+            // Update progress bar to 100%
+            progressBar.style.width = '100%';
+            
+            // Calculate score percentage
+            const percentage = (score / quizData.length) * 100;
+            scoreElement.textContent = `${score}/${quizData.length}`;
+            
+            // Set badge based on score
+            let badge = '';
+            let message = '';
+            
+            if (percentage >= 80) {
+                badge = 'Climate Expert';
+                message = 'Excellent! You have deep knowledge about climate change in Ghana.';
+            } else if (percentage >= 60) {
+                badge = 'Green Ambassador';
+                message = 'Great job! You understand the key issues well.';
+            } else if (percentage >= 40) {
+                badge = 'Eco Learner';
+                message = 'Good effort! Keep learning about climate change.';
+            } else {
+                badge = 'Beginner';
+                message = 'You\'re just starting your climate change journey. Keep learning!';
+            }
+            
+            badgeElement.textContent = badge;
+            resultMessageElement.textContent = message;
+            
+            quizCompleted = true;
+        }
+
+        // Retry Quiz
+        function retryQuiz() {
+            currentQuestion = 0;
+            score = 0;
+            quizCompleted = false;
+            
+            quizBody.style.display = 'block';
+            quizResult.style.display = 'none';
+            document.querySelector('.quiz-footer').style.display = 'flex';
+            
+            loadQuestion();
+        }
+
+        // Event Listeners
+        nextButton.addEventListener('click', nextQuestion);
+        retryButton.addEventListener('click', retryQuiz);
+
+        // Initialize the quiz
+        loadQuestion();
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const nav = document.querySelector('nav ul');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    nav.style.display = 'none';
+                }
+            });
+        });
+
+        // Responsive nav adjustment
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                nav.style.display = 'flex';
+            } else {
+                nav.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

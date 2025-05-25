@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Climate Change in Ghana - Media Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #1a5276;
+            --secondary-color: #28b463;
+            --accent-color: #f39c12;
+            --text-color: #333;
+            --light-bg: #f9f9f9;
+            --dark-bg: #2c3e50;
+            --documentary-color: #8e44ad;
+            --news-color: #c0392b;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url(images/Agriculture.jpg) center/cover;
+            opacity: 0.2;
+            z-index: 0;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
+            animation: fadeIn 1.5s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            margin-bottom: 15px;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        h2.section-title {
+            margin: 50px 0 30px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--accent-color);
+            color: var(--primary-color);
+            position: relative;
+        }
+        
+        h2.section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 100px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .media-item {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            animation: slideUp 0.8s ease-out;
+            animation-fill-mode: both;
+        }
+        
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .media-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .media-item iframe, .media-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border: none;
+        }
+        
+        .media-info {
+            padding: 20px;
+        }
+        
+        .media-info h3 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+            font-size: 1.3rem;
+        }
+        
+        .media-info p {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+        
+        .media-meta {
+            display: flex;
+            justify-content: space-between;
+            color: #777;
+            font-size: 0.85rem;
+        }
+        
+        .tag {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            margin-top: 10px;
+        }
+        
+        .tag.documentary {
+            background-color: var(--documentary-color);
+        }
+        
+        .tag.news {
+            background-color: var(--news-color);
+        }
+        
+        .filter-controls {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 30px 0;
+        }
+        
+        .filter-btn {
+            background: white;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 8px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .filter-btn.documentary {
+            border-color: var(--documentary-color);
+            color: var(--documentary-color);
+        }
+        
+        .filter-btn.documentary.active, .filter-btn.documentary:hover {
+            background: var(--documentary-color);
+            color: white;
+        }
+        
+        .filter-btn.news {
+            border-color: var(--news-color);
+            color: var(--news-color);
+        }
+        
+        .filter-btn.news.active, .filter-btn.news:hover {
+            background: var(--news-color);
+            color: white;
+        }
+        
+        .search-bar {
+            display: flex;
+            max-width: 500px;
+            margin: 30px auto;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 30px;
+            overflow: hidden;
+        }
+        
+        .search-bar input {
+            flex: 1;
+            padding: 12px 20px;
+            border: none;
+            outline: none;
+            font-size: 1rem;
+        }
+        
+        .search-bar button {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0 25px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .search-bar button:hover {
+            background: var(--secondary-color);
+        }
+        
+        /* Delayed animations for grid items */
+        .media-item:nth-child(1) { animation-delay: 0.1s; }
+        .media-item:nth-child(2) { animation-delay: 0.2s; }
+        .media-item:nth-child(3) { animation-delay: 0.3s; }
+        .media-item:nth-child(4) { animation-delay: 0.4s; }
+        .media-item:nth-child(5) { animation-delay: 0.5s; }
+        .media-item:nth-child(6) { animation-delay: 0.6s; }
+        
+        /* Footer Styles - as provided by you */
+        footer {
+            background-color: white;
+            color:black;
+            padding: 50px 0 20px;
+            margin-top: 50px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-column h3 {
+            color: black;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: green
+        }
+        
+        .footer-column p, .footer-column a {
+            color: #b3b3b3;
+            margin-bottom: 15px;
+            display: block;
+            transition: color 0.3s;
+        }
+        
+        .footer-column a:hover {
+            color: #f39c12;
+            text-decoration: none;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            color: #ffffff;
+            background-color: #333333;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: #f39c12;
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid #333333;
+            color: #b3b3b3;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .media-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2.section-title {
+                margin: 40px 0 20px;
+                font-size: 1.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .filter-controls {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .filter-btn {
+                width: 80%;
+                margin-bottom: 10px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .media-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .search-bar {
+                flex-direction: column;
+                border-radius: 10px;
+            }
+            
+            .search-bar input, .search-bar button {
+                width: 100%;
+                border-radius: 0;
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content container">
+            <h1>Climate Change in Ghana</h1>
+            <p class="subtitle">Exploring the impacts, challenges, and solutions to climate change in Ghana through multimedia content</p>
+        </div>
+    </header>
+    
+    <main class="container">
+        <div class="search-bar">
+            <input type="text" placeholder="Search climate topics...">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+        
+        <div class="filter-controls">
+            <button class="filter-btn active">All Content</button>
+            <button class="filter-btn">Videos</button>
+            <button class="filter-btn">Images</button>
+            <button class="filter-btn documentary">Documentaries</button>
+            <button class="filter-btn news">News Reports</button>
+        </div>
+        
+        <!-- General Media Section -->
+        <h2 class="section-title">Featured Media</h2>
+        <div class="media-grid">
+            <!-- Video 1 -->
+            <div class="media-item">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/aTuoqjgmv6c?si=wErSKzdQW4lBh5kG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="media-info">
+                    <h3>Rising Sea Levels in Ghana</h3>
+                    <p>How coastal communities in Ghana are being affected by rising sea levels due to climate change.</p>
+                    <span class="tag">Coastal Erosion</span>
+                    <div class="media-meta">
+                        <span><i class="far fa-calendar-alt"></i> Jan 2023</span>
+                        <span><i class="far fa-eye"></i> 12.4K views</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Image 1 -->
+            <div class="media-item">
+                <img src="images/8192024103605-0eu2xkjwwr-8192024101341-gh-drought.jpg" alt="Drought in Northern Ghana">
+                <div class="media-info">
+                    <h3>Drought in Northern Ghana</h3>
+                    <p>The increasing frequency of droughts is threatening food security in Ghana's northern regions.</p>
+                    <span class="tag">Agriculture</span>
+                    <div class="media-meta">
+                        <span><i class="far fa-calendar-alt"></i> Mar 2023</span>
+                        <span><i class="far fa-eye"></i> 8.7K views</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Video 2 -->
+            <div class="media-item">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/H1jVz5uxQ8o?si=N9Wo5E0AGV6dISWu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="media-info">
+                    <h3>Ghana's Renewable Energy Transition</h3>
+                    <p>How Ghana is shifting to solar and other renewable energy sources to combat climate change.</p>
+                    <span class="tag">Energy</span>
+                    <div class="media-meta">
+                        <span><i class="far fa-calendar-alt"></i> Nov 2022</span>
+                        <span><i class="far fa-eye"></i> 15.2K views</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Documentaries Section -->
+        <h2 class="section-title">Documentaries</h2>
+        <div class="media-grid">
+            <!-- Documentary 1 -->
+            <div class="media-item">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/6OeOnwT_ZdQ?si=xb3ayV2ROlxFvoJP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="media-info">
+                    <h3>Climate Change: The Ghana Story</h3>
+                    <p>A comprehensive look at how climate change is affecting different regions of Ghana.</p>
+                    <span class="tag documentary">Documentary</span>
+                    <div class="media-meta">
+                        <span><i class="far fa-clock"></i> 45 min</span>
+                        <span><i class="far fa-eye"></i> 32.7K views</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Documentary 2 -->
+            <div class="media-item">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/1LKciEKa3bM?si=hwW5UhGbwLLLi9v4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="media-info">
+                    <h3>Vanishing Coastlines</h3>
+                    <p>Documenting the disappearing fishing communities along Ghana's coast due to erosion.</p>
+                    <span class="tag documentary">Documentary</span>
+                    <div class="media-meta">
+                        <span><i class="far fa-clock"></i> 38 min</span>
+                        <span><i class="far fa-eye"></i> 28.1K views</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Documentary 3 -->
+            <div class="media-item">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/R3KtONrR7Uc?si=iJmGbjOv7-HDEyh-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="media-info">
+                    <h3>Green Gold: Cocoa & Climate</h3>
+                    <p>How climate change threatens Ghana's cocoa industry and what farmers are doing to adapt.</p>
+                    <span class="tag documentary">Documentary</span>
+                    <div class="media-meta">
+                        <span><i class="far fa-clock"></i> 52 min</span>
+                        <span><i class="far fa-eye"></i> 41.3K views</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- News Reports Section -->
+        <h2 class="section-title">News Reports</h2>
+        <div class="media-grid">
+            <!-- News 1 -->
+            <div class="media-item">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/x6cKVkmbKo8?si=hJ7paYg3NSiwAXuW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="media-info">
+                    <h3>Floods Devastate Accra Neighborhoods</h3>
+                    <p>Recent heavy rains caused by climate change have led to severe flooding in parts of Accra.</p>
+                    <span class="tag news">News Report</span>
+                    <div class="media-meta">
+                        <span><i class="far fa-newspaper"></i> TV3 News</span>
+                        <span><i class="far fa-eye"></i> 56.2K views</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- News 2 -->
+            <div class="media-item">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/U1MM4V3_faY?si=TivjZnleLJrzcwXu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="media-info">
+                    <h3>Northern Ghana Faces Worst Drought in Decades</h3>
+                    <p>Farmers struggle as rainfall patterns become increasingly unpredictable.</p>
+                    <span class="tag news">News Report</span>
+                    <div class="media-meta">
+                        <span><i class="far fa-newspaper"></i> AL JAZEERA News</span>
+                        <span><i class="far fa-eye"></i> 43.8K views</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- News 3 -->
+            <div class="media-item">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/6M9yD6oJcQI?si=fpBvwZMDEDUAAcVX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="media-info">
+                    <h3>Ghana's Climate Action Plan</h3>
+                    <p>Government announces new initiatives to combat climate change impacts.</p>
+                    <span class="tag news">News Report</span>
+                    <div class="media-meta">
+                        <span><i class="far fa-newspaper"></i> UTV News</span>
+                        <span><i class="far fa-eye"></i> 67.5K views</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>DI BTEC PROJECT</h3>
+                <p>We are dedicated to raising awareness about climate change impacts in Ghana and showcasing local solutions.</p>
+                
+            </div>
+            
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="learn.html">Climate Facts</a>
+                <a href="Resources.html">Resources</a>
+                
+            </div>
+            
+         
+            
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Accra, Ghana</p>
+                <p><i class="fas fa-phone"></i> +233 123 456 789</p>
+                <p><i class="fas fa-envelope"></i> info@climateghana.org</p>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2025 GreenGhanaAlliance. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Enhanced Filter functionality
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelector('.filter-btn.active').classList.remove('active');
+                this.classList.add('active');
+                
+                const filter = this.textContent;
+                const sections = document.querySelectorAll('.media-grid');
+                
+                if (filter === 'All Content') {
+                    sections.forEach(section => {
+                        section.style.display = 'grid';
+                    });
+                    document.querySelectorAll('.section-title').forEach(title => {
+                        title.style.display = 'block';
+                    });
+                } else {
+                    // Hide all sections first
+                    sections.forEach(section => {
+                        section.style.display = 'none';
+                    });
+                    document.querySelectorAll('.section-title').forEach(title => {
+                        title.style.display = 'none';
+                    });
+                    
+                    if (filter === 'Videos') {
+                        document.querySelectorAll('.media-item').forEach(item => {
+                            if (item.querySelector('iframe')) {
+                                item.closest('.media-grid').style.display = 'grid';
+                                item.closest('.media-grid').previousElementSibling.style.display = 'block';
+                            }
+                        });
+                    } else if (filter === 'Images') {
+                        document.querySelectorAll('.media-item').forEach(item => {
+                            if (item.querySelector('img')) {
+                                item.closest('.media-grid').style.display = 'grid';
+                                item.closest('.media-grid').previousElementSibling.style.display = 'block';
+                            }
+                        });
+                    } else if (filter === 'Documentaries') {
+                        document.querySelectorAll('.tag.documentary').forEach(tag => {
+                            tag.closest('.media-grid').style.display = 'grid';
+                            tag.closest('.media-grid').previousElementSibling.style.display = 'block';
+                        });
+                    } else if (filter === 'News Reports') {
+                        document.querySelectorAll('.tag.news').forEach(tag => {
+                            tag.closest('.media-grid').style.display = 'grid';
+                            tag.closest('.media-grid').previousElementSibling.style.display = 'block';
+                        });
+                    }
+                }
+            });
+        });
+        
+        // Search functionality
+        const searchInput = document.querySelector('.search-bar input');
+        searchInput.addEventListener('keyup', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const mediaItems = document.querySelectorAll('.media-item');
+            
+            if (searchTerm.length > 0) {
+                // Hide section titles when searching
+                document.querySelectorAll('.section-title').forEach(title => {
+                    title.style.display = 'none';
+                });
+            } else {
+                // Show all section titles when search is empty
+                document.querySelectorAll('.section-title').forEach(title => {
+                    title.style.display = 'block';
+                });
+            }
+            
+            mediaItems.forEach(item => {
+                const title = item.querySelector('h3').textContent.toLowerCase();
+                const description = item.querySelector('p').textContent.toLowerCase();
+                
+                if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                    item.style.display = 'block';
+                    // Ensure the parent grid is visible
+                    item.closest('.media-grid').style.display = 'grid';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+        
+        // Animation on scroll
+        const mediaItems = document.querySelectorAll('.media-item');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        mediaItems.forEach(item => {
+            item.style.opacity = 0;
+            item.style.transform = 'translateY(30px)';
+            item.style.transition = 'all 0.8s ease-out';
+            observer.observe(item);
+        });
+    </script>
+</body>
+</html>
